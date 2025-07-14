@@ -24,9 +24,6 @@ def extract_title_from_filename(filename):
     # Remove .pdf extension
     title = filename.replace('.pdf', '')
     
-    # Remove date part
-    title = re.sub(r'\d{8}_?', '', title)
-    
     # Convert underscores and hyphens to spaces
     title = title.replace('_', ' ').replace('-', ' ')
     
@@ -51,7 +48,6 @@ def generate_pdf_list():
             
             pdf_info = {
                 "title": title,
-                "subtitle": "",  # Set manually as needed
                 "filename": filename,
                 "date": date
             }
